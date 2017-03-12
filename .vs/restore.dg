@@ -1,1 +1,6 @@
-#:C:\Projects\_TEST\Mitchell\App\WEB\App.ApiCore\App.ApiCore.xproj
+#:C:\Projects\_TEST\Mitchell\App\WEB\App.Api\App.Api.xproj
+C:\Projects\_TEST\Mitchell\App\WEB\App.Api\App.Api.xproj|C:\Projects\_TEST\Mitchell\App\Infrastructure\App.Business\App.Business.csproj
+C:\Projects\_TEST\Mitchell\App\WEB\App.Api\App.Api.xproj|C:\Projects\_TEST\Mitchell\App\Infrastructure\App.ModuleRegistration\App.ModuleRegistration.csproj
+C:\Projects\_TEST\Mitchell\App\Infrastructure\App.ModuleRegistration\App.ModuleRegistration.csproj|C:\Projects\_TEST\Mitchell\App\Infrastructure\App.Business\App.Business.csproj
+C:\Projects\_TEST\Mitchell\App\Infrastructure\App.ModuleRegistration\App.ModuleRegistration.csproj|C:\Projects\_TEST\Mitchell\App\Infrastructure\App.DataAccess\App.DataAccess.csproj
+C:\Projects\_TEST\Mitchell\App\Infrastructure\App.ModuleRegistration\App.ModuleRegistration.csproj|C:\Projects\_TEST\Mitchell\App\Infrastructure\App.DataModels\App.DataModels.csproj

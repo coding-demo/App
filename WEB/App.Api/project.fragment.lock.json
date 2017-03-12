@@ -1,0 +1,74 @@
+{
+  "version": 2,
+  "exports": {
+    "App.Business/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.2",
+      "compile": {
+        "bin/Debug/App.Business.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/App.Business.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/App.Business.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "App.ModuleRegistration/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.2",
+      "compile": {
+        "bin/Debug/App.ModuleRegistration.dll": {}
+      },
+      "runtime": {
+        "../../packages/Autofac.4.4.0/lib/net45/Autofac.dll": {},
+        "bin/Debug/App.ModuleRegistration.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/App.ModuleRegistration.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "App.DataAccess/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.2",
+      "compile": {
+        "bin/Debug/App.DataAccess.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/App.DataAccess.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/App.DataAccess.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "App.DataModels/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.2",
+      "compile": {
+        "bin/Debug/App.DataModels.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/App.DataModels.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/App.DataModels.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}

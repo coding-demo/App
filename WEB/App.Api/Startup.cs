@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using App.ModuleRegistration;
+using Autofac.Integration.WebApi;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 
 namespace App.Api
 {
@@ -27,19 +31,32 @@ namespace App.Api
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
+            
+
+
         }
 
         public IConfigurationRoot Configuration { get; }
+        public IContainer ApplicationContainer { get; private set; }
+
 
         // This method gets called by the runtime. Use this method to add services to the container
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddMvc();
 
-
+            #region AUTOFAC wired up using an instance class
+            AppRoot root = new AppRoot();
+            root.ContainerBuilder.RegisterApiControllers(typeof(Startup).Assembly);
+            root.ContainerBuilder.Populate(services);
+            ApplicationContainer = root.GetContainer();
+            #endregion
+             
+            
+            return new AutofacServiceProvider(this.ApplicationContainer);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline

@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>App.ModuleRegistration</RootNamespace>
     <AssemblyName>App.ModuleRegistration</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,19 +37,31 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AppRoot.cs" />
+    <Compile Include="IAssemblyMarker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.Business\App.Business.csproj">
+      <Project>{fb806cf4-9f0c-4bcf-94d4-9e06182e2a04}</Project>
+      <Name>App.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.DataAccess\App.DataAccess.csproj">
+      <Project>{56ae87ae-e72f-45ce-93a2-015b562485c8}</Project>
+      <Name>App.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.DataModels\App.DataModels.csproj">
+      <Project>{bcb83930-c305-4bd1-9f83-e0c2da75f11d}</Project>
+      <Name>App.DataModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
