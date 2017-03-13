@@ -24,7 +24,7 @@ namespace App.Business
 
         public List<Vehicle> GetAllVehicles()
         {
-            return new List<Vehicle>();
+            return _repo.GetAllVehicles();
         }
 
         public Vehicle GetVehicleBy(int id)
@@ -34,7 +34,8 @@ namespace App.Business
 
         public Vehicle SaveVehicle(Vehicle data)
         {
-            return new Vehicle();
+
+            return new Vehicle { Id = 21, Make = "Honda", Model = "Accord", Year = 2013 };
         }
 
         public bool UpdateVehicle(Vehicle data)

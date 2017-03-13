@@ -44,6 +44,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\App.DataModels\App.DataModels.csproj">
+      <Project>{bcb83930-c305-4bd1-9f83-e0c2da75f11d}</Project>
+      <Name>App.DataModels</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\App.Interfaces\App.Interfaces.csproj">
       <Project>{75707ffe-aa3d-4775-a5e6-f28b71ff0b50}</Project>
       <Name>App.Interfaces</Name>

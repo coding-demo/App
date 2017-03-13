@@ -40,13 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\VehicleTable.cs" />
     <Compile Include="SqlDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Database\" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\App.DataModels\App.DataModels.csproj">
+      <Project>{BCB83930-C305-4BD1-9F83-E0C2DA75F11D}</Project>
+      <Name>App.DataModels</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\App.Interfaces\App.Interfaces.csproj">
       <Project>{75707ffe-aa3d-4775-a5e6-f28b71ff0b50}</Project>
       <Name>App.Interfaces</Name>

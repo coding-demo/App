@@ -8,6 +8,7 @@ using App.ModuleRegistration;
 using Autofac.Integration.WebApi;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace App.Api
 {
@@ -43,7 +44,12 @@ namespace App.Api
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
-            services.AddMvc();
+            services.AddMvc(options =>
+                                {
+                                    
+                                    options.RespectBrowserAcceptHeader = true; 
+                                    
+                                });
 
             #region AUTOFAC wired up using an instance class
             AppRoot root = new AppRoot();

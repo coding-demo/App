@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Infrastructure\App.DataModels\App.DataModels.csproj">
-      <Project>{BCB83930-C305-4BD1-9F83-E0C2DA75F11D}</Project>
+      <Project>{bcb83930-c305-4bd1-9f83-e0c2da75f11d}</Project>
       <Name>App.DataModels</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\App.Interfaces\App.Interfaces.csproj">
