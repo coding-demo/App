@@ -18,6 +18,23 @@
         }
       }
     },
+    "App.Interfaces/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.2",
+      "compile": {
+        "bin/Debug/App.Interfaces.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/App.Interfaces.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/App.Interfaces.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
     "App.ModuleRegistration/1.0.0": {
       "type": "project",
       "framework": ".NETFramework,Version=v4.5.2",
@@ -36,17 +53,17 @@
         }
       }
     },
-    "App.DataAccess/1.0.0": {
+    "App.Data/1.0.0": {
       "type": "project",
       "framework": ".NETFramework,Version=v4.5.2",
       "compile": {
-        "bin/Debug/App.DataAccess.dll": {}
+        "bin/Debug/App.Data.dll": {}
       },
       "runtime": {
-        "bin/Debug/App.DataAccess.dll": {}
+        "bin/Debug/App.Data.dll": {}
       },
       "contentFiles": {
-        "bin/Debug/App.DataAccess.pdb": {
+        "bin/Debug/App.Data.pdb": {
           "buildAction": "None",
           "codeLanguage": "any",
           "copyToOutput": true
@@ -64,6 +81,23 @@
       },
       "contentFiles": {
         "bin/Debug/App.DataModels.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "App.Repositories/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.2",
+      "compile": {
+        "bin/Debug/App.Repositories.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/App.Repositories.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/App.Repositories.pdb": {
           "buildAction": "None",
           "codeLanguage": "any",
           "copyToOutput": true

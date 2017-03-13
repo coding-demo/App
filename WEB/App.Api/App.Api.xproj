@@ -16,7 +16,11 @@
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Infrastructure\App.Business\App.Business.csproj" />
+    <DnxInvisibleCompile Include="Controllers\ValuesController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\AppLayers\App.Business\App.Business.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\App.Interfaces\App.Interfaces.csproj" />
     <ProjectReference Include="..\..\Infrastructure\App.ModuleRegistration\App.ModuleRegistration.csproj" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\DotNet.Web\Microsoft.DotNet.Web.targets" Condition="'$(VSToolsPath)' != ''" />

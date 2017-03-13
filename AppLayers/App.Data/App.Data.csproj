@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FB806CF4-9F0C-4BCF-94D4-9E06182E2A04}</ProjectGuid>
+    <ProjectGuid>{DCDBA12C-F717-41F4-BFDD-BAA277E6DD1B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>App.Business</RootNamespace>
-    <AssemblyName>App.Business</AssemblyName>
+    <RootNamespace>App.Data</RootNamespace>
+    <AssemblyName>App.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,13 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="VehicleManagment.cs" />
+    <Compile Include="SqlDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\App.DataModels\App.DataModels.csproj">
-      <Project>{bcb83930-c305-4bd1-9f83-e0c2da75f11d}</Project>
-      <Name>App.DataModels</Name>
+    <Folder Include="Database\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\App.Interfaces\App.Interfaces.csproj">
+      <Project>{75707ffe-aa3d-4775-a5e6-f28b71ff0b50}</Project>
+      <Name>App.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

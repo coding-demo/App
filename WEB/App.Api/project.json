@@ -27,6 +27,9 @@
         "App.Business": {
           "target": "project"
         },
+        "App.Interfaces": {
+          "target": "project"
+        },
         "App.ModuleRegistration": {
           "target": "project"
         }

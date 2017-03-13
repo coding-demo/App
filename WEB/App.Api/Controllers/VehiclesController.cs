@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using App.Business;
+
+using App.Interfaces.Business;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -18,22 +19,26 @@ namespace App.Api.Controllers
             _manager = manager;
         }
 
-        public IActionResult GetById(long id)
+        public IActionResult GetById(int id)
         {
-            return Ok();
+            return Ok(_manager.GetVehicleBy(id));
         }
 
 
+
+        [HttpGet("")]
         public IActionResult Get()
         {
             return Ok();
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+         
+        [HttpGet("{id:int}")]
+        public IActionResult Get(int id)
         {
-            return "Value: " + id.ToString();
+            //return "Value: " + id.ToString();
+
+            return Ok(_manager.GetVehicleBy(id));
         }
     }
 }

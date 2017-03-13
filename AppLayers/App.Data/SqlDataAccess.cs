@@ -1,12 +1,14 @@
-﻿using System;
+﻿using App.Interfaces.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.DataAccess
+namespace App.Data
 {
-    public class Class1
+
+    public class SqlDatabase : IDataBaseAccess
     {
     }
 }
