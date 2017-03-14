@@ -6,6 +6,7 @@ namespace App.DataModels
 
     public class Vehicle
     {
+        public Vehicle() { }
         public int Id { get; set; }
 
         [Range(1950, 2050)]

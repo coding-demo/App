@@ -45,6 +45,7 @@
     <Compile Include="BusinessModules.cs" />
     <Compile Include="DataAccessModules.cs" />
     <Compile Include="IAssemblyMarker.cs" />
+    <Compile Include="MapperModules.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryModules.cs" />
   </ItemGroup>

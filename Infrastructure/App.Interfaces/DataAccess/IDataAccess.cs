@@ -1,15 +1,19 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 
 namespace App.Interfaces.DataAccess
 {
 
     public interface IDataBaseAccess  
     {
-        List<object> GetRecords();
+        List<DataRow> GetRecords();
 
-        object GetRowById(int id);
+        DataRow GetRowById(int id);
 
-        object InsertRecord(object record);
+        void InsertRecord(DataRow record);
 
+        void UpdateRecord(DataRow record);
+
+        void DeleteRecord(int id);
     }
 }

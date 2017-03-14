@@ -24,7 +24,7 @@ namespace App.Business
 
         public List<Vehicle> GetAllVehicles()
         {
-            return _repo.GetAllVehicles();
+            return _repo.GetAll();
         }
 
         public Vehicle GetVehicleBy(int id)

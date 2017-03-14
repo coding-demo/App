@@ -3,25 +3,34 @@ using System.Collections.Generic;
 using App.DataModels;
 using App.Interfaces.DataAccess;
 using App.Interfaces.Repositories;
+using App.Interfaces.Repositories.Mappers;
+using System.Data;
 
 namespace App.Repositories
 {
     public class VehicleRepository : IVehicleRepository
     {
         private readonly IDataBaseAccess _database;
+        private readonly IDataMapper<Vehicle> _mapper;
 
-        public VehicleRepository(IDataBaseAccess database)
+        public VehicleRepository(IDataBaseAccess database, IDataMapper<Vehicle> mapper)
         {
             _database = database;
+            _mapper = mapper;
         }
 
-        public List<Vehicle> GetAllVehicles()
+        public List<Vehicle> GetAll()
         {
-            //return  _database.GetRecords();
-            throw new NotImplementedException();
+            DataTable dt = new DataTable();
+            var rows = _database.GetRecords();
+
+            dt = rows.CopyToDataTable();
+
+            var list = _mapper.MapToDTOList(dt);
+            return list;
         }
 
-        public Vehicle GetSpecificVehicleBy(int id)
+        public Vehicle FilterBy(int id)
         {
             throw new NotImplementedException();
         }

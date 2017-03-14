@@ -2,25 +2,46 @@
 using System.Collections.Generic;
 using App.DataModels;
 using App.Interfaces.DataAccess;
+using App.Data.Database;
+using System.Data;
 
 namespace App.Data
 {
-
+    /// <summary>
+    /// The Data Access Layer
+    /// </summary>
     public class SqlDatabase : IDataBaseAccess
     {
-        public List<object> GetRecords()
+        public SqlDatabase()
         {
-            throw new NotImplementedException();
+            VehicleTable.InitVehicleTable();
         }
 
-        public object GetRowById(int id)
+ 
+        public List<DataRow> GetRecords()
         {
-            throw new NotImplementedException();
+            return VehicleTable.Select();
         }
 
-        public object InsertRecord(object record)
+        public DataRow GetRowById(int id)
         {
-            throw new NotImplementedException();
+            return VehicleTable.Select(id);
         }
+
+        public void InsertRecord(DataRow record)
+        {
+            VehicleTable.Insert(record);
+        }
+
+        public void UpdateRecord(DataRow record)
+        {
+            VehicleTable.Update(record);
+        }
+
+        public void DeleteRecord(int id)
+        {
+            VehicleTable.Delete(id);
+        }
+
     }
 }

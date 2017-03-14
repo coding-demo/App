@@ -2,32 +2,61 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace App.Data.Database
 {
-    public class VehicleTable
+    /// <summary>
+    /// Simulation of a table in a SQL Database
+    /// </summary>
+    public static class VehicleTable
     {
 
-        public static List<Vehicle> Records = new List<Vehicle>();
-
-        public Vehicle Single(int id)
+        public static DataTable Table = new DataTable("Vehicles");
+     
+        public static void InitVehicleTable()
         {
-            return Records.Where(i => i.Id == id).SingleOrDefault();
+            //create the table definition if not already created
+            if (Table.Columns.Count <= 0)
+            {
+                Table.Columns.Add(new DataColumn("Id", typeof(int)));
+                Table.Columns.Add(new DataColumn("Year", typeof(int)));
+                Table.Columns.Add(new DataColumn("Make", typeof(string)));
+                Table.Columns.Add(new DataColumn("Model", typeof(string)));
+                Table.PrimaryKey = new DataColumn[] { Table.Columns["Id"] };
+
+                Table.Rows.Add(1, 2013, "Honda", "Accord");
+                Table.Rows.Add(2, 2013, "Chevy", "Malibu");
+            }
         }
 
-        public List<Vehicle> All()
+ 
+        public static DataRow Select(int id)
         {
-            return Records;
+            return Table.Select("Id=" + id.ToString()).SingleOrDefault();
         }
 
-        public Vehicle Add(Vehicle row)
+        public static List<DataRow> Select()
         {
-            Records.Add(row);
+            return Table.Select().ToList();
+        }
 
-            return row;
+        public static void Insert(DataRow row)
+        {
+            Table.Rows.Add(row);
+        }
+
+        public static void Update(DataRow record)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void Delete(int id)
+        {
+            throw new NotImplementedException();
         }
 
 

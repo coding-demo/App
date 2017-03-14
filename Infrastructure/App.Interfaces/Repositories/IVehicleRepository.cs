@@ -6,9 +6,9 @@ namespace App.Interfaces.Repositories
     public interface IVehicleRepository
     {
 
-        List<Vehicle> GetAllVehicles();
+        List<Vehicle> GetAll();
 
-        Vehicle GetSpecificVehicleBy(int id);
+        Vehicle FilterBy(int id);
 
         Vehicle SaveVehicleData(Vehicle data);
 
