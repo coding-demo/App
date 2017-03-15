@@ -80,8 +80,8 @@ namespace App.Api.Controllers
             try
             {
                 var resp = _manager.SaveVehicle(data);
-
-                return Created($"/api/v1/vehicles/{data.Id}", resp);
+                 
+                return Created($"/api/v1/vehicles/{resp.Id}", resp);
 
             }
             catch (Exception ex)

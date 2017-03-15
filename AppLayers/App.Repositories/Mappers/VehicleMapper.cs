@@ -6,24 +6,42 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using App.DataModels;
+using App.Data.Database;
 
 namespace App.Repositories.Mappers
 {
+
+    /// <summary>
+    /// Manual mapping here. Use AutoMapper or similar.
+    /// </summary>
     public class VehicleMapper  : IDataMapper<Vehicle>
     {
-
-        
-        public DataTable MapDTOListToTable(List<Vehicle> list)
+        public DataTable MapDtoListToTable(List<Vehicle> list)
         {
             throw new NotImplementedException();
         }
 
-        public Vehicle MapToDTO(DataTable table)
+        public DataRow MapDtoToRow(Vehicle type)
         {
-            throw new NotImplementedException();
+            DataTable tab = VehicleTable.GetVehicleTableStructure();
+            tab.Rows.Add(type.Id,type.Year, type.Make, type.Model);
+
+            return tab.Rows[0];
         }
 
-        public List<Vehicle> MapToDTOList(DataTable table)
+        public Vehicle MapToDto(DataTable table)
+        {
+            var row = table.Rows[0];
+            return new Vehicle
+            {
+                Id = row.Field<int>(0),
+                Year = row.Field<int>(1),
+                Make = row.Field<string>(2),
+                Model = row.Field<string>(3)
+            };
+        }
+
+        public List<Vehicle> MapToDtoList(DataTable table)
         {
             List<Vehicle> v = new List<Vehicle>();
 

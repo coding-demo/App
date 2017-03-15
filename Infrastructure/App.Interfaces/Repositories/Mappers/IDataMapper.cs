@@ -9,8 +9,9 @@ namespace App.Interfaces.Repositories.Mappers
 {
     public interface IDataMapper<T> where T : new()
     {
-        T MapToDTO(DataTable table);
-        List<T> MapToDTOList(DataTable table); //where T : new();
-        DataTable MapDTOListToTable(List<T> list);//;where T : new();
+        T MapToDto(DataTable table);
+        List<T> MapToDtoList(DataTable table);  
+        DataTable MapDtoListToTable(List<T> list); 
+        DataRow MapDtoToRow(T type);
     }
 }

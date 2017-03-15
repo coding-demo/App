@@ -10,9 +10,9 @@ namespace App.Interfaces.DataAccess
 
         DataRow GetRowById(int id);
 
-        void InsertRecord(DataRow record);
+        DataRow InsertRecord(DataRow record);
 
-        void UpdateRecord(DataRow record);
+        DataRow UpdateRecord(DataRow record);
 
         void DeleteRecord(int id);
     }

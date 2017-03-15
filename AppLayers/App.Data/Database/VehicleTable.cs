@@ -14,7 +14,7 @@ namespace App.Data.Database
     /// </summary>
     public static class VehicleTable
     {
-
+        private static int _incrementingRowId;
         public static DataTable Table = new DataTable("Vehicles");
      
         public static void InitVehicleTable()
@@ -22,18 +22,26 @@ namespace App.Data.Database
             //create the table definition if not already created
             if (Table.Columns.Count <= 0)
             {
-                Table.Columns.Add(new DataColumn("Id", typeof(int)));
-                Table.Columns.Add(new DataColumn("Year", typeof(int)));
-                Table.Columns.Add(new DataColumn("Make", typeof(string)));
-                Table.Columns.Add(new DataColumn("Model", typeof(string)));
-                Table.PrimaryKey = new DataColumn[] { Table.Columns["Id"] };
+                Table = GetVehicleTableStructure();
 
                 Table.Rows.Add(1, 2013, "Honda", "Accord");
                 Table.Rows.Add(2, 2013, "Chevy", "Malibu");
+                _incrementingRowId = 2;
             }
         }
 
- 
+        public static DataTable GetVehicleTableStructure()
+        {
+            DataTable tab = new DataTable();
+            tab.Columns.Add(new DataColumn("Id", typeof(int)));
+            tab.Columns.Add(new DataColumn("Year", typeof(int)));
+            tab.Columns.Add(new DataColumn("Make", typeof(string)));
+            tab.Columns.Add(new DataColumn("Model", typeof(string)));
+            tab.PrimaryKey = new DataColumn[] { tab.Columns["Id"] };
+
+            return tab;
+        }
+
         public static DataRow Select(int id)
         {
             return Table.Select("Id=" + id.ToString()).SingleOrDefault();
@@ -44,12 +52,16 @@ namespace App.Data.Database
             return Table.Select().ToList();
         }
 
-        public static void Insert(DataRow row)
+        public static DataRow Insert(DataRow row)
         {
-            Table.Rows.Add(row);
+            _incrementingRowId++;
+            row[0] = _incrementingRowId;
+            Table.ImportRow(row);
+
+            return row;
         }
 
-        public static void Update(DataRow record)
+        public static DataRow Update(DataRow record)
         {
             throw new NotImplementedException();
         }

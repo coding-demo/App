@@ -29,13 +29,12 @@ namespace App.Business
 
         public Vehicle GetVehicleBy(int id)
         {
-            return new Vehicle();
+            return _repo.FilterBy(id);
         }
 
         public Vehicle SaveVehicle(Vehicle data)
         {
-
-            return new Vehicle { Id = 21, Make = "Honda", Model = "Accord", Year = 2013 };
+            return _repo.SaveVehicleData(data);
         }
 
         public bool UpdateVehicle(Vehicle data)

@@ -28,14 +28,14 @@ namespace App.Data
             return VehicleTable.Select(id);
         }
 
-        public void InsertRecord(DataRow record)
+        public DataRow InsertRecord(DataRow record)
         {
-            VehicleTable.Insert(record);
+            return VehicleTable.Insert(record);
         }
 
-        public void UpdateRecord(DataRow record)
+        public DataRow UpdateRecord(DataRow record)
         {
-            VehicleTable.Update(record);
+            return VehicleTable.Update(record);
         }
 
         public void DeleteRecord(int id)
