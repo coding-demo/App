@@ -12,7 +12,7 @@ namespace App.Repositories.Mappers
 {
 
     /// <summary>
-    /// Manual mapping here. Use AutoMapper or similar.
+    /// Manual mapping here. Use AutoMapper or similar in actual projects.
     /// </summary>
     public class VehicleMapper  : IDataMapper<Vehicle>
     {

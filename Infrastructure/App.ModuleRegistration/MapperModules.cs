@@ -16,10 +16,7 @@ namespace App.ModuleRegistration
         {
             base.Load(builder);
 
-            //builder.RegisterGeneric(typeof(VehicleMapper)).As(typeof(IDataMapper<Vehicle>));
             builder.RegisterType(typeof(VehicleMapper)).As(typeof(IDataMapper<Vehicle>));
-
-
         }
     }
 }

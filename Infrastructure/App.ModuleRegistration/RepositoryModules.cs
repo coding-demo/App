@@ -11,8 +11,6 @@ namespace App.ModuleRegistration
             base.Load(builder);
 
             builder.RegisterType<VehicleRepository>().As<IVehicleRepository>();
-
-
         }
     }
 }

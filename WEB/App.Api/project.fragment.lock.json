@@ -5,13 +5,13 @@
       "type": "project",
       "framework": ".NETFramework,Version=v4.5.2",
       "compile": {
-        "bin/Debug/App.Business.dll": {}
+        "bin/Release/App.Business.dll": {}
       },
       "runtime": {
-        "bin/Debug/App.Business.dll": {}
+        "bin/Release/App.Business.dll": {}
       },
       "contentFiles": {
-        "bin/Debug/App.Business.pdb": {
+        "bin/Release/App.Business.pdb": {
           "buildAction": "None",
           "codeLanguage": "any",
           "copyToOutput": true
@@ -22,13 +22,13 @@
       "type": "project",
       "framework": ".NETFramework,Version=v4.5.2",
       "compile": {
-        "bin/Debug/App.Interfaces.dll": {}
+        "bin/Release/App.Interfaces.dll": {}
       },
       "runtime": {
-        "bin/Debug/App.Interfaces.dll": {}
+        "bin/Release/App.Interfaces.dll": {}
       },
       "contentFiles": {
-        "bin/Debug/App.Interfaces.pdb": {
+        "bin/Release/App.Interfaces.pdb": {
           "buildAction": "None",
           "codeLanguage": "any",
           "copyToOutput": true
@@ -39,14 +39,14 @@
       "type": "project",
       "framework": ".NETFramework,Version=v4.5.2",
       "compile": {
-        "bin/Debug/App.ModuleRegistration.dll": {}
+        "bin/Release/App.ModuleRegistration.dll": {}
       },
       "runtime": {
         "../../packages/Autofac.4.4.0/lib/net45/Autofac.dll": {},
-        "bin/Debug/App.ModuleRegistration.dll": {}
+        "bin/Release/App.ModuleRegistration.dll": {}
       },
       "contentFiles": {
-        "bin/Debug/App.ModuleRegistration.pdb": {
+        "bin/Release/App.ModuleRegistration.pdb": {
           "buildAction": "None",
           "codeLanguage": "any",
           "copyToOutput": true
@@ -57,13 +57,13 @@
       "type": "project",
       "framework": ".NETFramework,Version=v4.5.2",
       "compile": {
-        "bin/Debug/App.Data.dll": {}
+        "bin/Release/App.Data.dll": {}
       },
       "runtime": {
-        "bin/Debug/App.Data.dll": {}
+        "bin/Release/App.Data.dll": {}
       },
       "contentFiles": {
-        "bin/Debug/App.Data.pdb": {
+        "bin/Release/App.Data.pdb": {
           "buildAction": "None",
           "codeLanguage": "any",
           "copyToOutput": true
@@ -74,13 +74,13 @@
       "type": "project",
       "framework": ".NETFramework,Version=v4.5.2",
       "compile": {
-        "bin/Debug/App.DataModels.dll": {}
+        "bin/Release/App.DataModels.dll": {}
       },
       "runtime": {
-        "bin/Debug/App.DataModels.dll": {}
+        "bin/Release/App.DataModels.dll": {}
       },
       "contentFiles": {
-        "bin/Debug/App.DataModels.pdb": {
+        "bin/Release/App.DataModels.pdb": {
           "buildAction": "None",
           "codeLanguage": "any",
           "copyToOutput": true
@@ -91,13 +91,13 @@
       "type": "project",
       "framework": ".NETFramework,Version=v4.5.2",
       "compile": {
-        "bin/Debug/App.Repositories.dll": {}
+        "bin/Release/App.Repositories.dll": {}
       },
       "runtime": {
-        "bin/Debug/App.Repositories.dll": {}
+        "bin/Release/App.Repositories.dll": {}
       },
       "contentFiles": {
-        "bin/Debug/App.Repositories.pdb": {
+        "bin/Release/App.Repositories.pdb": {
           "buildAction": "None",
           "codeLanguage": "any",
           "copyToOutput": true

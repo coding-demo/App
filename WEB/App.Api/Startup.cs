@@ -57,8 +57,8 @@ namespace App.Api
             root.ContainerBuilder.Populate(services);
             ApplicationContainer = root.GetContainer();
             #endregion
-             
-            
+
+            services.AddCors();
             return new AutofacServiceProvider(this.ApplicationContainer);
         }
 
