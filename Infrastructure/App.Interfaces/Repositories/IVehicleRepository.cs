@@ -12,6 +12,7 @@ namespace App.Interfaces.Repositories
 
         Vehicle SaveVehicleData(Vehicle data);
 
+        void DeleteVehicle(int id);
 
     }
 }

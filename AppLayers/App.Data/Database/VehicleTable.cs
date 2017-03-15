@@ -68,7 +68,9 @@ namespace App.Data.Database
 
         public static void Delete(int id)
         {
-            throw new NotImplementedException();
+            var row = Table.Select("Id=" + id.ToString());
+            Table.Rows.Find(id).Delete();
+            Table.AcceptChanges();
         }
 
 

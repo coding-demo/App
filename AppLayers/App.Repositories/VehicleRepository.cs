@@ -61,5 +61,10 @@ namespace App.Repositories
 
             return tab;
         }
+
+        public void DeleteVehicle(int id)
+        {
+            VehicleTable.Delete(id);
+        }
     }
 }

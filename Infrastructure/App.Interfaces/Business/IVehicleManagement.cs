@@ -10,6 +10,6 @@ namespace App.Interfaces.Business
         Vehicle GetVehicleBy(int id);
         Vehicle SaveVehicle(Vehicle data);
         bool UpdateVehicle(Vehicle data);
-        bool DeleteVehicleBy(int id);
+        void DeleteVehicleBy(int id);
     }
 }

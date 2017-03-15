@@ -63,13 +63,10 @@ namespace App.Api.Controllers
             }
             catch (Exception ex)
             {
-
-                //log error here using a logger.
+               //log error here using a logger.
 
                 return StatusCode(500);
-
-
-            }
+           }
 
         }
 
@@ -82,7 +79,6 @@ namespace App.Api.Controllers
                 var resp = _manager.SaveVehicle(data);
                  
                 return Created($"/api/v1/vehicles/{resp.Id}", resp);
-
             }
             catch (Exception ex)
             {
@@ -90,25 +86,35 @@ namespace App.Api.Controllers
                 //log error here using a logger.
 
                 return StatusCode(500);
-
-
             }
 
         }
 
 
-        [HttpPut]
+        [HttpPut("")]
         public IActionResult Put([FromBody] Vehicle data)
         {
-
+            //TODO
             return Ok();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {
 
-            return Ok(_manager.GetVehicleBy(id));
+            try
+            {
+                _manager.DeleteVehicleBy(id);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+
+                //log error here using a logger.
+
+                return StatusCode(500);
+            }
+
         }
 
 

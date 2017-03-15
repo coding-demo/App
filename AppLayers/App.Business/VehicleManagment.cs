@@ -17,9 +17,10 @@ namespace App.Business
         }
 
 
-        public bool DeleteVehicleBy(int id)
+        public void DeleteVehicleBy(int id)
         {
-            return true;
+            _repo.DeleteVehicle(id);
+             
         }
 
         public List<Vehicle> GetAllVehicles()
