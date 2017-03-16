@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FB806CF4-9F0C-4BCF-94D4-9E06182E2A04}</ProjectGuid>
+    <ProjectGuid>{EE7A55B6-895F-4FED-9D97-1792C1F6F385}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>App.Business</RootNamespace>
-    <AssemblyName>App.Business</AssemblyName>
+    <RootNamespace>App.Business.Tests</RootNamespace>
+    <AssemblyName>App.Business.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,6 +34,14 @@
       <HintPath>..\..\packages\Castle.Core.4.0.0\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Moq, Version=4.7.1.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Moq.4.7.1\lib\net45\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.6.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NUnit.3.6.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,21 +52,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="VehicleManagment.cs" />
+    <Compile Include="VehicleManagmentTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\AppLayers\App.Business\App.Business.csproj">
+      <Project>{FB806CF4-9F0C-4BCF-94D4-9E06182E2A04}</Project>
+      <Name>App.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\App.DataModels\App.DataModels.csproj">
       <Project>{bcb83930-c305-4bd1-9f83-e0c2da75f11d}</Project>
       <Name>App.DataModels</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\App.Interfaces\App.Interfaces.csproj">
-      <Project>{75707FFE-AA3D-4775-A5E6-F28B71FF0B50}</Project>
+      <Project>{75707ffe-aa3d-4775-a5e6-f28b71ff0b50}</Project>
       <Name>App.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\App.Repositories\App.Repositories.csproj">
-      <Project>{4acc95af-4e7b-4edd-bb82-526a98fe42be}</Project>
-      <Name>App.Repositories</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

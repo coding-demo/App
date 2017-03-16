@@ -9,7 +9,9 @@ using Autofac.Integration.WebApi;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("Web.App.Api.Tests")]
 namespace App.Api
 {
     public class Startup
