@@ -46,9 +46,7 @@ namespace App.Api
 
             services.AddMvc(options =>
                                 {
-                                    
-                                    options.RespectBrowserAcceptHeader = true; 
-                                    
+                                     options.RespectBrowserAcceptHeader = true; 
                                 });
 
             #region AUTOFAC wired up using an instance class
@@ -65,6 +63,10 @@ namespace App.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseCors(builder =>
+                      builder.WithOrigins("https://estimate-dev.mymitchell.com")
+                        );
+
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
