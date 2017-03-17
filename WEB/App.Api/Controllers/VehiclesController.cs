@@ -2,12 +2,10 @@
 
 using App.Interfaces.Business;
 using System;
-using System.Net;
-using System.Net.Http;
 using App.DataModels;
 using System.Threading.Tasks;
 
-// For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+
 
 namespace App.Api.Controllers
 {
@@ -94,8 +92,18 @@ namespace App.Api.Controllers
         [HttpPut("")]
         public IActionResult Put([FromBody] Vehicle data)
         {
-            //TODO
-            return Ok();
+            try
+            {
+                _manager.UpdateVehicle(data);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+
+                //log error here using a logger.
+
+                return StatusCode(500);
+            }
         }
 
         [HttpDelete("{id:int}")]

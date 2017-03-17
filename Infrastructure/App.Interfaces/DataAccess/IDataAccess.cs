@@ -12,7 +12,7 @@ namespace App.Interfaces.DataAccess
 
         DataRow InsertRecord(DataRow record);
 
-        DataRow UpdateRecord(DataRow record);
+        bool UpdateRecord(DataRow record);
 
         void DeleteRecord(int id);
     }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using App.DataModels;
+﻿using System.Collections.Generic;
 using App.Interfaces.DataAccess;
 using App.Data.Database;
 using System.Data;
@@ -33,7 +31,7 @@ namespace App.Data
             return VehicleTable.Insert(record);
         }
 
-        public DataRow UpdateRecord(DataRow record)
+        public bool UpdateRecord(DataRow record)
         {
             return VehicleTable.Update(record);
         }

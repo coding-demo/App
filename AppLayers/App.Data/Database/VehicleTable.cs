@@ -1,11 +1,7 @@
-﻿using App.DataModels;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace App.Data.Database
 {
@@ -61,9 +57,22 @@ namespace App.Data.Database
             return row;
         }
 
-        public static DataRow Update(DataRow record)
+        public static bool Update(DataRow record)
         {
-            throw new NotImplementedException();
+            DataRow row = Table.Select("Id=" + record["Id"]).FirstOrDefault();
+
+            if (row != null)
+            {
+                row["Year"] = record["Year"];
+                row["Make"] = record["Make"];
+                row["Model"] = record["Model"];
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
 
         public static void Delete(int id)

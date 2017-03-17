@@ -40,7 +40,8 @@ namespace App.Business
 
         public bool UpdateVehicle(Vehicle data)
         {
-            return true;
+
+            return _repo.UpdateVehicleData(data);
         }
     }
 }

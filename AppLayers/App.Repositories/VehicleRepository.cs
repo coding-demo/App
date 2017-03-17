@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using App.DataModels;
 using App.Interfaces.DataAccess;
 using App.Interfaces.Repositories;
@@ -48,6 +47,13 @@ namespace App.Repositories
             return _mapper.MapToDto(CreateTableFromRow(insertedRow));
         }
 
+        public bool UpdateVehicleData(Vehicle data)
+        {
+            var recordToUpdate = _mapper.MapDtoToRow(data);
+
+            return  _database.UpdateRecord(recordToUpdate);
+
+        }
 
         /// <summary>
         /// converts row to table 

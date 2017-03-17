@@ -14,5 +14,7 @@ namespace App.Interfaces.Repositories
 
         void DeleteVehicle(int id);
 
+        bool UpdateVehicleData(Vehicle data);
+
     }
 }
